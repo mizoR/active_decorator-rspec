@@ -2,6 +2,8 @@
 
 [![Build Status](https://img.shields.io/travis/mizoR/active_decorator-rspec/master.svg?style=flat)](https://travis-ci.org/mizoR/active_decorator-rspec)
 [![Code Climate](https://img.shields.io/codeclimate/github/mizoR/active_decorator-rspec/badges/gpa.svg?style=flat)](https://codeclimate.com/github/mizoR/active_decorator-rspec)
+[![Dependency Status](https://img.shields.io/gemnasium/mizoR/active_decorator-rspec.svg?style=flat)](https://gemnasium.com/mizoR/active_decorator-rspec)
+
 
 ## Installation
 
