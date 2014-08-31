@@ -1,5 +1,7 @@
 # ActiveDecorator::RSpec
 
+[![Build Status](https://img.shields.io/travis/mizoR/active_decorator-rspec/master.svg?style=flat)](https://travis-ci.org/mizoR/active_decorator-rspec)
+
 ## Installation
 
 Add this line to your application's Gemfile:
