@@ -22,7 +22,7 @@ module ActiveDecorator
           end 
       end
 
-      ::RSpec::Core::ExampleGroup.include(HelperMethods)
+      ::RSpec::Core::ExampleGroup.send(:include, HelperMethods)
     end
   end
 end
