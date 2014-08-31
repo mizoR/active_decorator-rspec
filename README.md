@@ -1,6 +1,7 @@
 # ActiveDecorator::RSpec
 
 [![Build Status](https://img.shields.io/travis/mizoR/active_decorator-rspec/master.svg?style=flat)](https://travis-ci.org/mizoR/active_decorator-rspec)
+[![Code Climate](https://img.shields.io/codeclimate/github/mizoR/active_decorator-rspec/badges/gpa.svg?style=flat)](https://codeclimate.com/github/mizoR/active_decorator-rspec)
 
 ## Installation
 
