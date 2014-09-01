@@ -5,24 +5,25 @@ require "active_decorator/rspec/version"
 
 module ActiveDecorator
   module RSpec
-    module HelperMethods
-      def decorate(obj)
-        ActiveDecorator::Decorator.instance.decorate(obj)
-        obj
-      end
+    def self.enable(example=nil)
+      controller = Class.new(ActionController::Base).new
+      controller.request = ActionController::TestRequest.new
+      ActiveDecorator::ViewContext.current = controller.view_context
+
+      example.extend self if example
+
+      self
     end
 
-    def self.included(config)
-      config.before :each do
-        ActiveDecorator::ViewContext.current = begin
-            controller = Class.new(ActionController::Base).new
-            controller.request = ActionController::TestRequest.new
-            view_context = controller.view_context
-            view_context
-          end 
-      end
-
-      ::RSpec::Core::ExampleGroup.send(:include, HelperMethods)
+    def decorate(obj)
+      ActiveDecorator::Decorator.instance.decorate(obj)
+      obj
     end
+  end
+end
+
+RSpec.configure do |config|
+  config.before :each, type: :decorator do
+    ActiveDecorator::RSpec.enable(self)
   end
 end

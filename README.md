@@ -19,18 +19,21 @@ Or install it yourself as:
 
     $ gem install active_decorator-rspec
 
-## Usage
-
-First you need to require active_decorator/rspec in your spec_helper.rb:
+And require it as:
 
 ```
 require "active_decorator/rspec"
 ```
 
-And You will need to include ActiveDecorator::RSpec in your example groups:
+## Usage
 
-```
-config.include ActiveDecorator::RSpec, type: :decorator
+```rb
+describe AuthorDecorator, type: decorator do
+  let(:author) { Author.create name: 'boo' }
+  subject { decorate author }
+
+  its(:reverse_name) { should eq 'oob' }
+end
 ```
 
 ## Contributing

@@ -6,8 +6,6 @@ require "rspec/its"
 require File.join(File.dirname(__FILE__), "dummy_app.rb")
 
 RSpec.configure do |config|
-  config.include ActiveDecorator::RSpec, type: :decorator
-
   config.before :all do
     CreateAuthors.up if !ActiveRecord::Base.connection.table_exists?('authors')
   end

@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["mizokami"]
   spec.email         = ["suzunatsu@yahoo.com"]
   spec.summary       = %q{ActiveDecorator::RSpec}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/mizoR/active_decorator-rspec"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
