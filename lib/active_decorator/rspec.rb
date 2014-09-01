@@ -10,7 +10,7 @@ module ActiveDecorator
       controller.request = ActionController::TestRequest.new
       ActiveDecorator::ViewContext.current = controller.view_context
 
-      example.extend self if example
+      example.extend self
 
       self
     end
