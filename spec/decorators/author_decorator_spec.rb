@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AuthorDecorator, type: :decorator do
+describe AuthorDecorator do
   let(:author) { Author.create(name: "boo") }
 
   subject { decorate author }
