@@ -23,6 +23,13 @@ module ActiveDecorator
 end
 
 RSpec.configure do |config|
+  dir_parts = %w<spec decorators>
+  escaped_path = Regexp.compile(dir_parts.join('[\\\/]') + '[\\\/]')
+
+  config.define_derived_metadata(file_path: escaped_path) do |metadata|
+    metadata[:type] ||= :decorator
+  end
+
   config.before :each, type: :decorator do
     ActiveDecorator::RSpec.enable(self)
   end
