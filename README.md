@@ -29,7 +29,8 @@ require "active_decorator/rspec"
 ## Usage
 
 ```rb
-describe AuthorDecorator, type: decorator do
+# spec/decorators/author_decorator_spec.rb
+describe AuthorDecorator do
   let(:author) { Author.create name: 'boo' }
   subject { decorate author }
 
