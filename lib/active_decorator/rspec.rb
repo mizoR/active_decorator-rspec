@@ -6,11 +6,13 @@ require "active_decorator/rspec/version"
 module ActiveDecorator
   module RSpec
     def self.enable(example=nil)
-      controller = Class.new(ActionController::Base).new
+      example.extend self
+
+      base_class = defined?(ApplicationController) ? \
+        ApplicationController : ActionController::Base
+      controller = Class.new(base_class).new
       controller.request = ActionController::TestRequest.new
       ActiveDecorator::ViewContext.current = controller.view_context
-
-      example.extend self
 
       self
     end
