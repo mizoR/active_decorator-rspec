@@ -5,7 +5,7 @@ require "active_decorator/rspec/version"
 
 module ActiveDecorator
   module RSpec
-    def self.enable(example=nil)
+    def self.enable(example)
       example.extend self
 
       base_class = defined?(ApplicationController) ? \
