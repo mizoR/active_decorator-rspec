@@ -12,7 +12,11 @@ module ActiveDecorator
         ApplicationController : ActionController::Base
       controller = Class.new(base_class).new
       controller.request = ActionController::TestRequest.new
-      ActiveDecorator::ViewContext.current = controller.view_context
+      if ActiveDecorator::ViewContext.respond_to?(:current=)
+        ActiveDecorator::ViewContext.current = controller.view_context
+      else
+        ActiveDecorator::ViewContext.push controller.view_context
+      end
 
       self
     end
