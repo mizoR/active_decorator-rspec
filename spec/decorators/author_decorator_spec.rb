@@ -9,7 +9,7 @@ describe AuthorDecorator do
     its(:reverse_name) { should eq("oob") }
 
     its(:form) {
-      should match %r|^<form class=\"edit_author\" id=\"edit_author_4\" action=\"/authors/4\" accept-charset=\"UTF-8\" method=\"post\">|
+      should match %r|^<form class=\"edit_author\" id=\"edit_author_#{author.id}\" action=\"/authors/#{author.id}\" accept-charset=\"UTF-8\" method=\"post\">|
       should match %r|<input type=\"text\" value=\"boo\" name=\"author\[name\]\" id=\"author_name\" />|
       should match %r|</form>$|
     }
