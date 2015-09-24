@@ -17,5 +17,7 @@ describe AuthorDecorator do
     its(:link) { should eq %(<a href="/authors/#{author.id}">boo</a>) }
 
     its(:url) { should eq "http://test.host/authors/#{author.id}" }
+
+    its(:link_if_admin) { should eq %(<a href="/authors/#{author.id}">boo</a>) }
   end
 end

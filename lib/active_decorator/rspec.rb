@@ -8,8 +8,11 @@ module ActiveDecorator
     def self.enable(example)
       example.extend self
 
-      base_class = defined?(ApplicationController) ? \
-        ApplicationController : ActionController::Base
+      base_class = begin
+                     ApplicationController
+                   rescue NameError
+                     ActionController::Base
+                   end
       controller = Class.new(base_class).new
       controller.request = ActionController::TestRequest.new
       if ActiveDecorator::ViewContext.respond_to?(:current=)

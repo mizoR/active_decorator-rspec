@@ -10,6 +10,7 @@ module DummyApp
     config.session_store :cookie_store, :key => '_dummy_app_session'
     config.active_support.deprecation = :log
     config.eager_load = false
+    config.root = File.join(File.dirname(__FILE__), 'dummy_app')
   end
 end
 DummyApp::Application.initialize!
@@ -37,9 +38,10 @@ module AuthorDecorator
   def url
     author_url(self)
   end
-end
 
-class ApplicationController < ActionController::Base
+  def link_if_admin
+    link if admin?
+  end
 end
 
 class Author < ActiveRecord::Base
