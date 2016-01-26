@@ -1,3 +1,4 @@
+require "rspec/core"
 require "active_decorator"
 require "action_controller"
 require "action_controller/test_case"
