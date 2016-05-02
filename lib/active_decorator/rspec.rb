@@ -15,7 +15,11 @@ module ActiveDecorator
                      ActionController::Base
                    end
       controller = Class.new(base_class).new
-      controller.request = ActionController::TestRequest.new
+      controller.request = if ActionPack::VERSION::STRING >= '5'
+                             ActionController::TestRequest.create
+                           else
+                             ActionController::TestRequest.new
+                           end
       if ActiveDecorator::ViewContext.respond_to?(:current=)
         ActiveDecorator::ViewContext.current = controller.view_context
       else
