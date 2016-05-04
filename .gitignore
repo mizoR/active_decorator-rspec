@@ -25,3 +25,4 @@ tmp
 *.a
 mkmf.log
 log/*.log
+gemfiles/*.lock
