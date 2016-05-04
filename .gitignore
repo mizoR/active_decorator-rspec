@@ -5,6 +5,7 @@
 .yardoc
 .rspec
 Gemfile.lock
+gemfiles/*.lock
 InstalledFiles
 _yardoc
 coverage
@@ -15,6 +16,7 @@ rdoc
 spec/dummy/app_*/db/*.sqlite3
 spec/dummy/app_*/log/*.log
 spec/dummy/app_*/tmp/
+spec/dummy_app/log/*.log
 spec/reports
 test/tmp
 test/version_tmp
