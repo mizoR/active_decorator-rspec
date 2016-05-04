@@ -8,14 +8,14 @@ rvm:
 
 gemfile:
   - Gemfile
-  - gemfiles/rails_5_beta4.gemfile
+  - gemfiles/Gemfile-rails.5.0.0.beta4.gemfile
 
 matrix:
   exclude:
     - rvm: 2.0.0
-      gemfile: gemfiles/rails_5_beta4.gemfile
+      gemfile: gemfiles/Gemfile-rails.5.0.0.beta4.gemfile
     - rvm: 2.1.8
-      gemfile: gemfiles/rails_5_beta4.gemfile
+      gemfile: gemfiles/Gemfile-rails.5.0.0.beta4.gemfile
 
 before_install:
   - gem update bundler

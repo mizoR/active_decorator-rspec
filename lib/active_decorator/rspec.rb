@@ -15,7 +15,7 @@ module ActiveDecorator
                      ActionController::Base
                    end
       controller = Class.new(base_class).new
-      controller.request = if ActionPack::VERSION::STRING >= '5'
+      controller.request = if ActionController::TestRequest.respond_to?(:create)
                              ActionController::TestRequest.create
                            else
                              ActionController::TestRequest.new
