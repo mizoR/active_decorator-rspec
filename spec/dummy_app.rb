@@ -47,7 +47,9 @@ end
 class Author < ActiveRecord::Base
 end
 
-class CreateAuthors < ActiveRecord::Migration
+migration_class = ActiveRecord::Migration
+migration_class = migration_class[5.0] if ActiveRecord.version >= Gem::Version.new('5.0')
+class CreateAuthors < migration_class
   def self.up
     create_table(:authors) {|t| t.string :name}
   end
