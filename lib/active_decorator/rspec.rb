@@ -16,7 +16,11 @@ module ActiveDecorator
                    end
       controller = Class.new(base_class).new
       controller.request = if ActionController::TestRequest.respond_to?(:create)
-                             ActionController::TestRequest.create
+                             if ActionPack.version.release >= Gem::Version.new('5.1.0')
+                               ActionController::TestRequest.create(controller.class)
+                             else
+                               ActionController::TestRequest.create
+                             end
                            else
                              ActionController::TestRequest.new
                            end
